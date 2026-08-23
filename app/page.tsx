@@ -7,12 +7,15 @@ import Contact from "./components/ContactFooter";
 import TrustStats from "./components/TrustStats";
 import FAQ from "./components/Faq";
 import Footer from "./components/Footer";
+import ONas from './components/Onas'
+
 export default function Home() {
   return (
     <div>
       <Header />
       <Hero />
       <TrustStats />
+      <ONas/>
       <BrandTicker />
       <Services />
       <Contact />

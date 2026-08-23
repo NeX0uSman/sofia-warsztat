@@ -7,19 +7,21 @@ const faders = {
   animate: { opacity: 1, y: 0 },
 };
 
+const TICKER_TEXT = "DIAGNOSTYKA KOMPUTEROWA · REMONTY SILNIKÓW · UKŁADY ZAWIESZENIA · UKŁADY HAMULCOWE · SERWIS KLIMATYZACJI · PLEWISKA UL. SZKOLNA 90 · TEL. 509 664 358 · ";
+
 export default function Hero() {
   return (
-    <section className="relative min-h-[85vh] bg-auto-matte text-auto-text flex items-center justify-center overflow-hidden border-b-2 border-auto-border transition-colors pb-16 pt-8 sm:pb-20">
+    <section className="relative min-h-[85vh] bg-auto-matte text-auto-text flex flex-col justify-between overflow-hidden border-b-2 border-auto-border transition-colors">
       
-      {/* Real Driveway Background */}
+      {/* Background Images */}
       <div 
         className="absolute inset-0 bg-cover bg-center grayscale contrast-[1.4] brightness-[0.3]"
         style={{ backgroundImage: 'url("/driveway.png")' }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-auto-matte via-transparent to-auto-matte" />
 
-      {/* Hero Content */}
-      <div className="relative z-10 max-w-[1200px] w-full mx-auto px-4 sm:px-6 py-8 sm:py-16 grid md:grid-cols-12 gap-8 lg:gap-12 items-center">
+      {/* Main Hero Content */}
+      <div className="relative z-10 max-w-[1200px] w-full mx-auto px-4 sm:px-6 py-12 sm:py-20 grid md:grid-cols-12 gap-8 lg:gap-12 items-center my-auto">
         
         <motion.div
           initial="initial" animate="animate" transition={{ staggerChildren: 0.15, duration: 0.8 }}
@@ -43,7 +45,7 @@ export default function Hero() {
           <motion.div variants={faders} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5 pt-2">
             <a
               href="#umow-wizyte"
-              className="bg-auto-danger hover:opacity-90 text-white font-subheading text-sm sm:text-base font-black px-6 sm:px-10 py-4 sm:py-5 uppercase tracking-widest flex items-center justify-center gap-3 transition-all shadow-[6px_6px_0_rgba(0,0,0,0.15)] dark:shadow-[6px_6px_0_rgba(0,0,0,0.8)] border-4 border-black/10 dark:border-black/30"
+              className="bg-auto-danger hover:opacity-90 text-white font-subheading text-sm sm:text-base font-black px-6 sm:px-10 py-3.5 sm:py-5 uppercase tracking-widest flex items-center justify-center gap-3 transition-all shadow-[6px_6px_0_rgba(0,0,0,0.15)] dark:shadow-[6px_6px_0_rgba(0,0,0,0.8)] border-4 border-black/10 dark:border-black/30"
             >
               <span>ZAPISZ SIĘ ONLINE</span>
               <ArrowUpRight className="w-5 h-5" />
@@ -51,7 +53,7 @@ export default function Hero() {
             
             <a
               href="#uslugi"
-              className="text-white font-subheading text-sm sm:text-base font-bold px-6 sm:px-8 py-4 sm:py-5 uppercase tracking-widest flex items-center justify-center gap-2.5 transition-all group border border-white/20 sm:border-none"
+              className="text-white font-subheading text-sm sm:text-base font-bold px-6 sm:px-8 py-3.5 sm:py-5 uppercase tracking-widest flex items-center justify-center gap-2.5 transition-all group border border-white/20 sm:border-none"
             >
               <Gauge className="w-5 h-5 text-white/80 group-hover:text-auto-danger" />
               <span>OFERTA SERWISOWA</span>
@@ -59,7 +61,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Industrial Right Accent */}
+        {/* Industrial Accent Block */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -75,10 +77,20 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Ticker */}
-      <div className="absolute bottom-0 left-0 right-0 bg-auto-danger text-white font-mono text-[10px] font-bold py-2 sm:py-2.5 overflow-hidden whitespace-nowrap select-none uppercase tracking-wider border-y-2 border-black/20 dark:border-black/40">
-        DIAGNOSTYKA KOMPUTEROWA · REMONTY SILNIKÓW · UKŁADY ZAWIESZENIA · UKŁADY HAMULCOWE · SERWIS KLIMATYZACJI · PLEWISKA UL. SZKOLNA 90 · TEL. 509 664 358 ·
+      {/* Infinite Running Marquee Ticker */}
+      <div className="relative z-10 w-full bg-auto-danger text-white font-mono text-[10px] sm:text-xs font-bold py-2.5 overflow-hidden select-none uppercase tracking-wider border-t-2 border-black/20">
+        <div className="flex w-max">
+          <motion.div
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
+            className="flex whitespace-nowrap"
+          >
+            <span>{TICKER_TEXT.repeat(4)}</span>
+            <span>{TICKER_TEXT.repeat(4)}</span>
+          </motion.div>
+        </div>
       </div>
+
     </section>
   );
 }
