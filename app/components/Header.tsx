@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Sun, Moon } from 'lucide-react';
+import { Phone, Sun, Moon, X } from 'lucide-react';
 import RenomaLogo from './Logo';
 
 const NAV_LINKS = [
@@ -54,11 +54,11 @@ export default function Header() {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-auto-panel/80 dark:bg-auto-panel/85 border-b-2 border-auto-border transition-all duration-300">
       <div 
         className={`max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between transition-all duration-300 ${
-          scrolled ? 'py-1.5 sm:py-2.5' : 'py-2.5 sm:py-4'
+          scrolled ? 'py-1 sm:py-2' : 'py-2 sm:py-3'
         }`}
       >
         <a href="#" className="flex items-center transition-transform duration-300 origin-left">
-          <div className={`transition-all duration-300 transform scale-85 sm:scale-100 ${scrolled ? 'sm:scale-90' : ''}`}>
+          <div className="scale-75 sm:scale-90 origin-left">
             <RenomaLogo />
           </div>
         </a>
@@ -80,7 +80,7 @@ export default function Header() {
               className="p-1.5 sm:p-2 rounded-lg bg-auto-input border border-auto-border text-auto-text hover:opacity-80 transition-opacity"
               aria-label="Toggle Theme"
             >
-              {isDark ? <Sun className="w-4 h-4 text-auto-heading" /> : <Moon className="w-4 h-4 text-auto-heading" />}
+              {isDark ? <Sun className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-auto-heading" /> : <Moon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-auto-heading" />}
             </button>
           )}
 
@@ -94,10 +94,10 @@ export default function Header() {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-1.5 sm:p-2 bg-auto-input border border-auto-border text-auto-text focus:outline-none z-50 relative"
+            className="lg:hidden p-1.5 bg-auto-input border border-auto-border text-auto-text focus:outline-none z-50 relative"
             aria-label="Toggle Menu"
           >
-            <div className="w-5 h-4 sm:w-6 sm:h-5 flex flex-col justify-between relative">
+            <div className="w-5 h-4 flex flex-col justify-between relative">
               <motion.span
                 animate={isOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
                 className="w-full h-0.5 bg-current block origin-center transition-transform"
@@ -115,7 +115,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Solid Mobile Drawer Overlay */}
+      {/* Mobile Drawer Overlay with Top Logo Header */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -123,9 +123,24 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '-100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 w-full h-screen bg-auto-matte z-40 lg:hidden pt-24 px-6 pb-8 flex flex-col justify-between border-b-4 border-auto-danger overflow-y-auto"
+            className="fixed inset-0 w-full h-[100dvh] bg-auto-matte z-50 lg:hidden flex flex-col justify-between border-b-4 border-auto-danger overflow-y-auto"
           >
-            <nav className="flex flex-col gap-5 font-subheading text-2xl font-black uppercase tracking-wider">
+            {/* Top Bar inside Menu */}
+            <div className="p-4 flex items-center justify-between border-b border-auto-border bg-auto-panel">
+              <div className="scale-75 origin-left">
+                <RenomaLogo />
+              </div>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="p-1.5 bg-auto-input border border-auto-border text-auto-heading"
+                aria-label="Close menu"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Links */}
+            <nav className="flex flex-col gap-4 font-subheading text-xl font-black uppercase tracking-wider px-6 py-6">
               {NAV_LINKS.map((link, idx) => (
                 <motion.a
                   key={link.name}
@@ -142,16 +157,17 @@ export default function Header() {
               ))}
             </nav>
 
-            <div className="space-y-4 pt-6 mt-auto">
+            {/* Footer inside Menu */}
+            <div className="space-y-3 px-6 pb-6 pt-2 mt-auto">
               <a
                 href="tel:+48509664358"
-                className="w-full flex items-center justify-center gap-2 bg-auto-danger text-white font-subheading text-base font-bold py-3.5 uppercase tracking-widest"
+                className="w-full flex items-center justify-center gap-2 bg-auto-danger text-white font-subheading text-sm font-bold py-3 uppercase tracking-widest"
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-4 h-4" />
                 <span>ZADZWONIŃ: 509 664 358</span>
               </a>
               
-              <div className="text-center font-mono text-xs text-auto-concrete">
+              <div className="text-center font-mono text-[11px] text-auto-concrete">
                 ul. Szkolna 90, 62-064 Plewiska
               </div>
             </div>
