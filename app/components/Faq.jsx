@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, HelpCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const FAQS = [
@@ -38,36 +38,54 @@ export default function Faq() {
         <div className="space-y-4">
           {FAQS.map((faq, idx) => {
             const isOpen = openIdx === idx;
+            const faqNum = (idx + 1).toString().padStart(2, "0");
+
             return (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, x: -15 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08, duration: 0.4 }}
-                className="bg-auto-panel border border-auto-border transition-colors overflow-hidden"
+                className={`bg-auto-panel border-2 transition-all duration-300 ${
+                  isOpen
+                    ? "border-auto-danger shadow-[6px_6px_0_rgba(0,0,0,0.15)] dark:shadow-[6px_6px_0_rgba(0,0,0,0.8)]"
+                    : "border-auto-border hover:border-auto-concrete/50"
+                }`}
               >
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-subheading text-base sm:text-lg font-bold uppercase text-auto-heading"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 font-subheading text-base sm:text-lg font-bold uppercase text-auto-heading transition-colors"
                 >
-                  <span>{faq.q}</span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-auto-danger shrink-0 transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
+                  <div className="flex items-center gap-4">
+                    <span className="font-mono text-xs text-auto-danger font-black tracking-widest px-2 py-1 bg-auto-matte border border-auto-border">
+                      [{faqNum}]
+                    </span>
+                    <span>{faq.q}</span>
+                  </div>
+                  <div
+                    className={`p-2 bg-auto-matte border border-auto-border transition-transform duration-300 shrink-0 ${
+                      isOpen ? "rotate-180 border-auto-danger text-auto-danger" : "text-auto-concrete"
                     }`}
-                  />
+                  >
+                    <ChevronDown className="w-4 h-4" />
+                  </div>
                 </button>
-                <AnimatePresence>
+
+                <AnimatePresence initial={false}>
                   {isOpen && (
                     <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.25 }}
-                      className="px-6 pb-6 font-mono text-xs text-auto-concrete leading-relaxed border-t border-auto-border/50 pt-4"
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: [0.04, 0.62, 0.23, 0.98] }}
+                      className="overflow-hidden"
                     >
-                      {faq.a}
+                      <div className="px-6 pb-6 pt-2 font-mono text-xs text-auto-concrete leading-relaxed border-t border-auto-border/60 flex items-start gap-3">
+                        <HelpCircle className="w-4 h-4 text-auto-danger shrink-0 mt-0.5" />
+                        <div>{faq.a}</div>
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>

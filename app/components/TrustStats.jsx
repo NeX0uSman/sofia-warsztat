@@ -3,19 +3,34 @@ import { Star, ShieldCheck, FileCheck, Car } from "lucide-react";
 import { motion } from "framer-motion";
 
 const steps = [
-  { num: "01", title: "Diagnoza", desc: "Podłączenie komputera, weryfikacja fizyczna usterki." },
-  { num: "02", title: "Wycena", desc: "Zawsze dzwonimy z kosztorysem przed rozpoczęciem prac." },
-  { num: "03", title: "Naprawa", desc: "Montaż części OE lub sprawdzonych zamienników z gwarancją." },
-  { num: "04", title: "Odbiór", desc: "Jazda próbna, wydanie starych części do wglądu i protokół." },
+  {
+    num: "01",
+    title: "Diagnoza",
+    desc: "Podłączenie komputera, precyzyjna lokalizacja usterki.",
+  },
+  {
+    num: "02",
+    title: "Wycena",
+    desc: "Zawsze dzwonimy z kosztorysem przed rozpoczęciem prac.",
+  },
+  {
+    num: "03",
+    title: "Naprawa",
+    desc: "Obsługa silników, skrzyń DSG/AT oraz podzespołów z gwarancją.",
+  },
+  {
+    num: "04",
+    title: "Odbiór",
+    desc: "Jazda próbna, protokół wykonanych usług i zwrot części.",
+  },
 ];
 
 export default function TrustStats() {
   return (
     <section className="py-20 bg-auto-matte text-auto-text border-b-2 border-auto-border transition-colors">
       <div className="max-w-[1400px] mx-auto px-6 space-y-16">
-        
         {/* Banner */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -26,13 +41,19 @@ export default function TrustStats() {
             <div className="flex items-center gap-3 mb-2">
               <div className="flex text-amber-500">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 fill-current" />
+                  <Star
+                    key={i}
+                    className="w-4 h-4 lg:w-6 lg:h-6 fill-current"
+                  />
                 ))}
               </div>
-              <span className="font-heading text-3xl font-black text-auto-heading">4.9 / 5.0</span>
+              <span className="font-heading text-l lg:text-3xl font-black text-auto-heading">
+                4.5 / 5.0
+              </span>
             </div>
             <p className="font-mono text-xs text-auto-concrete">
-              Średnia ocen na podstawie ponad 200+ opinii w Google Maps.
+              Wysoka jakość usług potwierdzona zadowoleniem kierowców w Poznaniu
+              i Plewiskach.
             </p>
           </div>
 
@@ -40,22 +61,34 @@ export default function TrustStats() {
             <div className="flex items-start gap-3">
               <ShieldCheck className="w-5 h-5 text-auto-danger shrink-0" />
               <div>
-                <strong className="block text-auto-heading uppercase font-subheading text-sm">Gwarancja 12-24m</strong>
-                <span className="text-auto-concrete">Na części i robociznę</span>
+                <strong className="block text-auto-heading uppercase font-subheading text-sm">
+                  20 Lat Praktyki
+                </strong>
+                <span className="text-auto-concrete">
+                  Doświadczenie warsztatowe
+                </span>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <FileCheck className="w-5 h-5 text-auto-danger shrink-0" />
               <div>
-                <strong className="block text-auto-heading uppercase font-subheading text-sm">Brak Ukrytych Kosztów</strong>
-                <span className="text-auto-concrete">Każdy koszt do akceptacji</span>
+                <strong className="block text-auto-heading uppercase font-subheading text-sm">
+                  Brak Ukrytych Kosztów
+                </strong>
+                <span className="text-auto-concrete">
+                  Jasny kosztorys naprawy
+                </span>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Car className="w-5 h-5 text-auto-danger shrink-0" />
               <div>
-                <strong className="block text-auto-heading uppercase font-subheading text-sm">Auto zastępcze</strong>
-                <span className="text-auto-concrete">Na czas dłuższych napraw</span>
+                <strong className="block text-auto-heading uppercase font-subheading text-sm">
+                  Pełna Gwarancja
+                </strong>
+                <span className="text-auto-concrete">
+                  Na części i robociznę
+                </span>
               </div>
             </div>
           </div>
@@ -64,7 +97,7 @@ export default function TrustStats() {
         {/* Steps */}
         <div>
           <span className="font-mono text-xs text-auto-concrete uppercase tracking-widest block mb-2">
-            / Standard obsługi
+            / Standard obsługi w Plewiskach
           </span>
           <h2 className="font-subheading text-3xl font-black uppercase tracking-tight text-auto-heading mb-8">
             JAK PRACUJEMY?
@@ -93,7 +126,6 @@ export default function TrustStats() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

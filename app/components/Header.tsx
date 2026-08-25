@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Sun, Moon, X } from 'lucide-react';
-import RenomaLogo from './Logo';
+import EuropejczykLogo from './Logo';
 
 const NAV_LINKS = [
   { name: 'Usługi', href: '#uslugi' },
@@ -51,7 +51,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-auto-panel/80 dark:bg-auto-panel/85 border-b-2 border-auto-border transition-all duration-300">
+    <header className="dark sticky top-0 z-50 backdrop-blur-md bg-zinc-950/90 border-b-2 border-auto-border transition-all duration-300">
       <div 
         className={`max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between transition-all duration-300 ${
           scrolled ? 'py-1 sm:py-2' : 'py-2 sm:py-3'
@@ -59,7 +59,7 @@ export default function Header() {
       >
         <a href="#" className="flex items-center transition-transform duration-300 origin-left">
           <div className="scale-75 sm:scale-90 origin-left">
-            <RenomaLogo />
+            <EuropejczykLogo />
           </div>
         </a>
 
@@ -85,11 +85,11 @@ export default function Header() {
           )}
 
           <a
-            href="tel:+48509664358"
+            href="tel:+48534762922"
             className="hidden sm:flex items-center gap-2 bg-auto-danger text-white font-subheading text-xs font-bold px-4 py-2 uppercase tracking-wider shadow-sm hover:opacity-90 transition-opacity"
           >
             <Phone className="w-3.5 h-3.5" />
-            <span>509 664 358</span>
+            <span>534 762 922</span>
           </a>
 
           <button
@@ -128,7 +128,7 @@ export default function Header() {
             {/* Top Bar inside Menu */}
             <div className="p-4 flex items-center justify-between border-b border-auto-border bg-auto-panel">
               <div className="scale-75 origin-left">
-                <RenomaLogo />
+                <EuropejczykLogo />
               </div>
               <button
                 onClick={() => setIsOpen(false)}
@@ -160,15 +160,15 @@ export default function Header() {
             {/* Footer inside Menu */}
             <div className="space-y-3 px-6 pb-6 pt-2 mt-auto">
               <a
-                href="tel:+48509664358"
+                href="tel:+48534762922"
                 className="w-full flex items-center justify-center gap-2 bg-auto-danger text-white font-subheading text-sm font-bold py-3 uppercase tracking-widest"
               >
                 <Phone className="w-4 h-4" />
-                <span>ZADZWONIŃ: 509 664 358</span>
+                <span>ZADZWONIŃ: 534 762 922</span>
               </a>
               
               <div className="text-center font-mono text-[11px] text-auto-concrete">
-                ul. Szkolna 90, 62-064 Plewiska
+                Stawna 6A, 62-064 Plewiska
               </div>
             </div>
           </motion.div>

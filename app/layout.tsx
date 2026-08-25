@@ -19,8 +19,8 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Renoma Car | Plewiska - Profesjonalna Mechanika Pojazdowa',
-  description: 'Diagnostyka komputerowa, remonty silników, zawieszenia i hamulce. Autoryzowany partner Motrio.',
+  title: 'Europejczyk Auto Serwis | Plewiska - 20 Lat profesjonalnego remontu pojazdów',
+  description: 'Diagnostyka komputerowa, remonty silników, zawieszenia i nawet więcej',
 };
 
 export default function RootLayout({

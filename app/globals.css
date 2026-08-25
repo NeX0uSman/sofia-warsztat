@@ -3,29 +3,29 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* Light Theme (Default) */
-  --color-auto-matte: #f4f4f6;
-  --color-auto-panel: rgba(255, 255, 255, 0.75);
-  --color-auto-card: rgba(255, 255, 255, 0.85);
-  --color-auto-border: rgba(0, 0, 0, 0.12);
-  --color-auto-danger: #d90429;
-  --color-auto-concrete: #52525b;
-  --color-auto-text: #18181b;
-  --color-auto-heading: #09090b;
+  /* Light Theme (Бело-синяя свежая палитра) */
+  --color-auto-matte: #f0f4f8;
+  --color-auto-panel: rgba(255, 255, 255, 0.85);
+  --color-auto-card: rgba(255, 255, 255, 0.95);
+  --color-auto-border: rgba(0, 85, 255, 0.15);
+  --color-auto-danger: #0055ff; /* Переименовано визуально в Electric Blue */
+  --color-auto-concrete: #475569;
+  --color-auto-text: #0f172a;
+  --color-auto-heading: #020617;
   --color-auto-input: #ffffff;
 }
 
 .dark {
-  /* Dark Theme Override */
-  --color-auto-matte: #0c0c0e;
-  --color-auto-panel: rgba(20, 20, 24, 0.7);
-  --color-auto-card: rgba(26, 26, 32, 0.6);
-  --color-auto-border: rgba(255, 255, 255, 0.1);
-  --color-auto-danger: #e60000;
-  --color-auto-concrete: #a1a1aa;
-  --color-auto-text: #ffffff;
+  /* Dark Theme Override (Темно-синий премиальный бокс) */
+  --color-auto-matte: #070c14;
+  --color-auto-panel: rgba(15, 23, 42, 0.75);
+  --color-auto-card: rgba(30, 41, 59, 0.65);
+  --color-auto-border: rgba(56, 189, 248, 0.2);
+  --color-auto-danger: #1d4ed8; /* Глубокий синий акцент */
+  --color-auto-concrete: #94a3b8;
+  --color-auto-text: #f8fafc;
   --color-auto-heading: #ffffff;
-  --color-auto-input: rgba(0, 0, 0, 0.5);
+  --color-auto-input: rgba(15, 23, 42, 0.8);
 }
 
 @theme {
@@ -34,7 +34,7 @@
   --color-auto-panel: var(--color-auto-panel);
   --color-auto-card: var(--color-auto-card);
   --color-auto-border: var(--color-auto-border);
-  --color-auto-danger: var(--color-auto-danger);
+  --color-auto-danger: var(--color-auto-danger); /* Класс bg-auto-danger теперь выдает электрик-синий */
   --color-auto-concrete: var(--color-auto-concrete);
   --color-auto-text: var(--color-auto-text);
   --color-auto-heading: var(--color-auto-heading);
@@ -53,12 +53,13 @@
   }
 }
 
-/* Glassmorphism Utility */
+/* Glassmorphism Utility c синеватым свечением */
 .glass-panel {
   background: var(--color-auto-panel);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--color-auto-border);
+  box-shadow: 0 4px 20px -2px rgba(0, 85, 255, 0.08);
 }
 
 .glass-card {

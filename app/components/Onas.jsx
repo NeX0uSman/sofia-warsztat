@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Wrench, Award, Users, CheckCircle2 } from "lucide-react";
+import { Wrench, Award, CheckCircle2, ShieldCheck } from "lucide-react";
 
 const HIGHLIGHTS = [
-  "Certyfikowany warsztat sieci Motrio",
-  "Zaawansowana diagnostyka komputerowa",
-  "Oryginalne części OE oraz wysokiej klasy zamienniki",
-  "Transparentny kosztorys przed każdą naprawą",
+  "20 lat doświadczenia w branży",
+  "Serwis skrzyń biegów (DSG • PowerShift • AT)",
+  "Wysokiej jakości części OE oraz markowe zamienniki",
+  "Pełna gwarancja na wszystkie wykonane usługi",
 ];
 
 export default function ONas() {
@@ -29,16 +29,16 @@ export default function ONas() {
             </span>
 
             <h2 className="font-subheading text-3xl sm:text-5xl font-black uppercase tracking-tight text-auto-heading leading-none">
-              TRADYCJA WARSZTATOWA, <br />
-              <span className="text-auto-danger">NOWOCZESNA PRECYZJA</span>.
+              20 LAT DOŚWIADCZENIA, <br />
+              <span className="text-auto-danger">PROFEJONALNA PRECYZJA</span>.
             </h2>
 
             <p className="font-mono text-sm sm:text-base text-auto-concrete leading-relaxed">
-              Renoma Car w Plewiskach to miejsce utworzone z pasji do mechaniki i szacunku dla czasu klienta. Jako oficjalny partner sieci <strong className="text-auto-heading">Motrio</strong> ączymy tradycyjny kunszt z zaawansowaną aparaturą diagnostyczną.
+              <strong className="text-auto-heading">EUROPEJCZYK AUTO SERWIS</strong> w Plewiskach to warsztat samochodowy budowany na wieloletniej praktyce i wiedzy technicznej. Zapewniamy pełną obsługę pojazdów osobowych i dostawczych dla klientów z Poznań Plewiska i okolic.
             </p>
 
             <p className="font-mono text-xs sm:text-sm text-auto-concrete leading-relaxed">
-              Specjalizujemy się w naprawach układów hamulcowych, zawieszeń oraz remontach silników. Nie wymieniamy części „na ślepo” — precyzyjnie diagnozujemy przyczynę awarii, oferując rzetelną opiekę serwisową dla kierowców z Plewisk, Junikowa i okolic.
+              Specjalizujemy się w zaawansowanych naprawach mechanicznych: od kompleksowej obsługi automatycznych skrzyń biegów (DSG, PowerShift, AT) i wymiany rozrządów, po regenerację turbosprężarek oraz wtryskiwaczy Diesla. Stawiamy na rzetelną diagnostykę i jasną komunikację.
             </p>
 
             {/* Checklist */}
@@ -54,16 +54,16 @@ export default function ONas() {
             {/* Quick Metrics */}
             <div className="grid grid-cols-3 gap-4 pt-6 border-t border-auto-border">
               <div>
-                <span className="font-heading text-2xl sm:text-3xl font-black text-auto-heading block">15+</span>
+                <span className="font-heading text-2xl sm:text-3xl font-black text-auto-heading block">20+</span>
                 <span className="font-mono text-[10px] text-auto-concrete uppercase">Lat Doświadczenia</span>
               </div>
               <div>
-                <span className="font-heading text-2xl sm:text-3xl font-black text-auto-heading block">5000+</span>
-                <span className="font-mono text-[10px] text-auto-concrete uppercase">Obsłużonych Aut</span>
+                <span className="font-heading text-2xl sm:text-3xl font-black text-auto-heading block">100%</span>
+                <span className="font-mono text-[10px] text-auto-concrete uppercase">Gwarancji Jakości</span>
               </div>
               <div>
-                <span className="font-heading text-2xl sm:text-3xl font-black text-auto-heading block">100%</span>
-                <span className="font-mono text-[10px] text-auto-concrete uppercase">Jasnych Wycen</span>
+                <span className="font-heading text-2xl sm:text-3xl font-black text-auto-heading block">PRO</span>
+                <span className="font-mono text-[10px] text-auto-concrete uppercase">Sprzęt Diagnostyczny</span>
               </div>
             </div>
           </motion.div>
@@ -78,21 +78,21 @@ export default function ONas() {
           >
             <div className="bg-auto-panel border-4 border-auto-border p-4 shadow-[10px_10px_0_rgba(0,0,0,0.2)] dark:shadow-[10px_10px_0_rgba(0,0,0,0.8)]">
               <img
-                src="/praca.jpg"
-                alt="Zespół Renoma Car w trakcie pracy"
+                src="/praca.png"
+                alt="Zespół Europejczyk Auto Serwis"
                 className="w-full h-80 object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-500"
               />
               
               <div className="mt-4 p-4 bg-auto-matte border border-auto-border flex items-center gap-4">
                 <div className="p-3 bg-auto-danger text-white shrink-0">
-                  <Award className="w-6 h-6" />
+                  <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div>
                   <h3 className="font-subheading text-sm font-black uppercase text-auto-heading">
-                    Autoryzacja Motrio
+                    Gwarancja & Jakość
                   </h3>
                   <p className="font-mono text-[11px] text-auto-concrete">
-                    Spełniamy rygorystyczne normy jakościowe napraw i części serwisowych.
+                    Wszystkie usługi wykonujemy przy użyciu sprawdzonych części i profesjonalnych narzędzi.
                   </p>
                 </div>
               </div>
@@ -100,7 +100,7 @@ export default function ONas() {
 
             {/* Industrial Tag */}
             <div className="absolute -bottom-4 -left-4 bg-auto-danger text-white font-mono text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest hidden sm:block">
-              // RENOMA CAR PLEWISKA
+              // EUROPEJCZYK • PLEWISKA UL. STAWNA 6
             </div>
           </motion.div>
 
