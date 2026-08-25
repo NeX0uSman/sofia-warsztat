@@ -28,11 +28,11 @@ export default function Contact() {
   ).length;
   const progressPercent = Math.round((completedFields / 4) * 100);
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const getFieldBorder = (val) =>
+  const getFieldBorder = (val: string) =>
     val.trim().length > 0
       ? "border-green-500/80 focus:border-green-400"
       : "border-auto-border focus:border-auto-danger";
