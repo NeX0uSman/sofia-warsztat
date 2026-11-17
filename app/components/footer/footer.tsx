@@ -98,7 +98,7 @@ export default function FooterSection({
 
           <div className="space-y-2 text-xs sm:text-sm">
             <div className="font-display font-bold text-ink">Adres i godziny otwarcia</div>
-            <p className="text-slatebody">ul. Bukowska 114, 60-398 Poznań</p>
+            <p className="text-slatebody">ul. Poznańska 87, 62-052, Komorniki</p>
             <p className="text-slatebody">Poniedziałek – Piątek: 07:30 – 18:00</p>
             <p className="text-slatebody">Sobota: 08:00 – 14:00 (odbiór i wydania)</p>
           </div>
@@ -110,7 +110,7 @@ export default function FooterSection({
               onClick={onCopyPhone}
               className="block font-display font-extrabold text-lg text-terracotta hover:underline cursor-pointer"
             >
-              +48 61 840 29 10
+              +48 698 744 738
             </MotionButton>
             <p className="text-slatebody">kontakt@sofia-warsztat.pl</p>
             <p className="text-xs text-slatebody pt-1">

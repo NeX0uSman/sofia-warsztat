@@ -46,10 +46,10 @@ export const BRANDS = [
 ];
 
 export const COMPANY_INFO = {
-  name: 'RENOMA CAR',
-  address: 'ul. Stawna 6A, 62-064 Plewiska',
-  phone: '534 762 922',
-  phoneRaw: '+48534762922',
+  name: 'sofia',
+  address: 'ul. Poznańska 87, 62-052 Komorniki',
+  phone: '698 744 738',
+  phoneRaw: '+48 698 744 738',
   email: 'serwis@europejczyk.pl',
   hours: 'Pn - Pt: 09:00 – 18:00',
   saturday: 'Sobota: 09:00 – 14:00',

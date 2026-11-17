@@ -23,9 +23,9 @@ export default function HeroIntroduction({
             </svg>
           ))}
         </div>
-        <span className="text-xs font-semibold text-ink">4.9/5 na Google</span>
+        <span className="text-xs font-semibold text-ink">4.3/5 na Google</span>
         <span className="text-zinc-300">•</span>
-        <span className="text-xs text-slatebody">340+ opinii w Poznaniu</span>
+        <span className="text-xs text-slatebody">40+ opinii w Poznaniu</span>
       </div>
 
       {/* Clear, Punchy Headline */}
@@ -39,7 +39,7 @@ export default function HeroIntroduction({
 
       {/* Reassuring Copy */}
       <p className="text-slatebody text-base sm:text-[17px] leading-relaxed max-w-xl">
-        W <strong className="text-ink font-semibold">Warsztacie SOFIA</strong> przy ul. Bukowskiej w Poznaniu mówimy ludzkim językiem. Zawsze znasz kosztorys i zakres prac zanim dotkniemy kluczem Twojego auta.
+        W <strong className="text-ink font-semibold">Warsztacie SOFIA</strong> przy ul. Poznańskiej w Komornikach mówimy ludzkim językiem. Zawsze znasz kosztorys i zakres prac zanim dotkniemy kluczem Twojego auta.
       </p>
 
       {/* Direct CTAs */}

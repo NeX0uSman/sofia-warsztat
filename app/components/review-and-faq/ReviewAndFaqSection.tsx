@@ -5,19 +5,19 @@ import { MotionButton } from "../MotionInteractive";
 
 const REVIEWS = [
   {
-    author: "Michał Kowalczyk",
-    car: "Skoda Octavia III 2.0 TDI",
-    text: "Pierwszy warsztat w Poznaniu, z którego dostałem MMS-em zdjęcia zużytych tulei i tarcz jeszcze przed wymianą. Cena co do złotówki zgodna z wcześniejszym SMS-em.",
+    author: "Mikita Audzeyeu",
+    car: "Peugeout 508",
+    text: "Jestem bardzo zadowolony z wizyty w serwisie. Przyjechałem na wymianę oleju i filtrów i wszystko zostało zrobione szybko, sprawnie i profesjonalnie. Obsługa bardzo miła i pomocna – od razu widać, że znają się na swojej pracy. Samochód został przyjęty o umówionej godzinie, bez zbędnego czekania, a cała usługa przebiegła naprawdę sprawnie",
   },
   {
-    author: "Karolina Nowakowska",
+    author: "Piotr K.",
     car: "Toyota Yaris Hybrid",
-    text: "Bardzo kulturalna obsługa, czysta poczekalnia z dobrą kawą i nikt nie patrzy z góry, gdy pytam o szczegóły techniczne. Wszystko wytłumaczone po ludzku.",
+    text: "Jestem bardzo zadowolony z jakości pracy mechaników ( + fajni ludzie ) serwisu Sofia. Wszystko zrobiono wzorowo. Uważam że ceny są też normalne.",
   },
   {
-    author: "Tomasz Zieliński",
+    author: "Kasia Przechocko",
     car: "BMW 320d F30",
-    text: "Szybka diagnostyka usterki układu dolotowego, z którą dwa inne serwisy nie mogły sobie poradzić. Auto odebrane punktualnie o 16:30, w środku pachnąco i czysto.",
+    text: "Awaria w trasie, szybka diagnoza, rozwiązanie problemu. Bardzo przystępna cena jak na pomoc w sobotę i na ostatnią chwilę. Polecam i dziękuję!",
   },
 ];
 
@@ -54,12 +54,12 @@ export default function ReviewsAndFaqSection() {
                 Opinie kierowców
               </span>
               <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-ink tracking-tight">
-                Zaufało nam ponad 340 właścicieli aut.
+                Zaufało nam ponad 40 właścicieli aut.
               </h2>
             </div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-white shadow-card text-xs font-semibold text-ink">
               <span className="text-amber-400">★★★★★</span>
-              <span>Średnia ocen 4.9 / 5.0</span>
+              <span>Średnia ocen 4.3 / 5.0</span>
             </div>
           </div>
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-
+import icon from "@/public/tab-icon-sofia.ico";
 const dmSans = DM_Sans({
   subsets: ["latin", "latin-ext"],
   variable: "--font-dm",
@@ -15,8 +15,12 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "SOFIA — Twój Przyjazny Warsztat Samochodowy",
-  description: "Serwis auta bez stresu, jasne zasady i kawa na miejscu.",
+  title: "SOFIA — Mechanik i Serwis Samochodowy Poznań",
+  description:
+    "Kompleksowy serwis aut w Poznaniu. Diagnostyka, wymiana oleju, hamulce, klimatyzacja. Zawsze wycena przed naprawą i gwarancja na usługi. Umów wizytę!",
+  icons: {
+    icon: "/tab-icon-sofia.ico",
+  },
 };
 
 export default function RootLayout({
