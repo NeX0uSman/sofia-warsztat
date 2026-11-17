@@ -1,28 +1,5 @@
-import Image from "next/image";
-import Header from "./components/Header";
-import Hero from "./components/HeroSection";
-import TrustStats from "./components/TrustStats";
-import ONas from './components/Onas'
-import Services from "./components/ServiceGrid";
-import BrandTicker from "./components/BrandTicket";
-import Contact from "./components/ContactFooter";
-import FAQ from "./components/Faq";
-import Footer from "./components/Footer";
-import ReviewsWidget from "./components/ReviewsWidget";
+import HomePage from "./components/HomePage";
 
 export default function Home() {
-  return (
-    <div>
-      <Header />
-      <Hero />
-      <TrustStats />  
-      <ONas />        
-      <ReviewsWidget/>
-      <BrandTicker />  
-      <Services />    
-      <Contact />     
-      <FAQ />          
-      <Footer />
-    </div>
-  );
+  return <HomePage />;
 }

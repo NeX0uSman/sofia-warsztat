@@ -1,70 +1,43 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
-:root {
-  /* Light Theme (Бело-синяя свежая палитра) */
-  --color-auto-matte: #f0f4f8;
-  --color-auto-panel: rgba(255, 255, 255, 0.85);
-  --color-auto-card: rgba(255, 255, 255, 0.95);
-  --color-auto-border: rgba(0, 85, 255, 0.15);
-  --color-auto-danger: #0055ff; /* Переименовано визуально в Electric Blue */
-  --color-auto-concrete: #475569;
-  --color-auto-text: #0f172a;
-  --color-auto-heading: #020617;
-  --color-auto-input: #ffffff;
-}
-
-.dark {
-  /* Dark Theme Override (Темно-синий премиальный бокс) */
-  --color-auto-matte: #070c14;
-  --color-auto-panel: rgba(15, 23, 42, 0.75);
-  --color-auto-card: rgba(30, 41, 59, 0.65);
-  --color-auto-border: rgba(56, 189, 248, 0.2);
-  --color-auto-danger: #1d4ed8; /* Глубокий синий акцент */
-  --color-auto-concrete: #94a3b8;
-  --color-auto-text: #f8fafc;
-  --color-auto-heading: #ffffff;
-  --color-auto-input: rgba(15, 23, 42, 0.8);
-}
-
 @theme {
-  /* Expose custom CSS variables to Tailwind utilities */
-  --color-auto-matte: var(--color-auto-matte);
-  --color-auto-panel: var(--color-auto-panel);
-  --color-auto-card: var(--color-auto-card);
-  --color-auto-border: var(--color-auto-border);
-  --color-auto-danger: var(--color-auto-danger); /* Класс bg-auto-danger теперь выдает электрик-синий */
-  --color-auto-concrete: var(--color-auto-concrete);
-  --color-auto-text: var(--color-auto-text);
-  --color-auto-heading: var(--color-auto-heading);
-  --color-auto-input: var(--color-auto-input);
+  --font-sans: var(--font-dm), sans-serif;
+  --font-display: var(--font-jakarta), sans-serif;
 
-  --font-heading: var(--font-syncopate), sans-serif;
-  --font-subheading: var(--font-oswald), sans-serif;
-  --font-mono: var(--font-mono), monospace;
+  --color-sand: #F8F7F4;
+  --color-warmwhite: #FFFFFF;
+  --color-oat: #F1EFEA;
+  --color-ink: #18181B;
+  --color-slatebody: #52525B;
+  --color-terracotta: #E85D2A;
+  --color-terracottaHover: #D14B1A;
+  --color-sage: #15803D;
+
+  --shadow-soft: 0 20px 40px -15px rgba(24, 24, 27, 0.06);
+  --shadow-card: 0 4px 20px -2px rgba(24, 24, 27, 0.05), 0 0 0 1px rgba(24, 24, 27, 0.05);
+  --shadow-float: 0 12px 32px -4px rgba(24, 24, 27, 0.08), 0 0 0 1px rgba(24, 24, 27, 0.06);
 }
 
-@layer base {
-  body {
-    background-color: var(--color-auto-matte);
-    color: var(--color-auto-text);
-    font-family: var(--font-mono);
+.bg-comfort-grid {
+  background-color: #F8F7F4;
+  background-image: radial-gradient(#D6D3CD 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+body {
+  max-width: 1660px;
+  margin: auto
+}
+@keyframes softPinPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.75);
+    opacity: 0;
   }
 }
 
-/* Glassmorphism Utility c синеватым свечением */
-.glass-panel {
-  background: var(--color-auto-panel);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--color-auto-border);
-  box-shadow: 0 4px 20px -2px rgba(0, 85, 255, 0.08);
-}
-
-.glass-card {
-  background: var(--color-auto-card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--color-auto-border);
+.pin-pulse {
+  animation: softPinPulse 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
 }
