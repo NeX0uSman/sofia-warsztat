@@ -38,7 +38,7 @@ export default function HomePage() {
   };
 
   const copyPhone = async () => {
-    const phone = "+48 61 840 29 10";
+    const phone = "+48 698 744 738";
     try {
       await navigator.clipboard.writeText(phone);
       showToast(`Skopiowano numer: ${phone}`);
